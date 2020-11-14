@@ -1,4 +1,4 @@
 # hydrogenic_matrix_elements
 This is a python script that computes matrix elements of the form:
 
-<a href="https://www.codecogs.com/eqnedit.php?latex=g(x)&space;=&space;\frac{x}{2}&space;&plus;&space;\Gamma(x)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?
+<img src="https://latex.codecogs.com/gif.latex?g(x)&space;=&space;\frac{x}{2}&space;&plus;&space;\Gamma(x)" title="g(x) = \frac{x}{2} + \Gamma(x)" />

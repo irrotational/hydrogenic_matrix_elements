@@ -1,0 +1,51 @@
+Notation: (n_a,l_a,m_a),(n_b,l_b,m_b),(n_c,l_c,m_c),(n_d,l_d,m_d)
+
+Is Equivalent To: < a(r)c(r') |  1/|r-r'|  | b(r)d(r') >
+
+############################################################################################
+# Example 1
+
+Calculate the single matrix element '(1,0,0) (1,0,0) (1,0,0) (1,0,0)':
+
+python3 hydrogenic_matrix_elements.py -todo '(1,0,0) (1,0,0) (1,0,0) (1,0,0)'
+
+Result: 0.6250087660475644
+
+The result for this particular matrix element is known analytically (see, for example,
+"Introduction to Quantum Mechanics" by D. Griffiths) (actual answer = 0.625 exactly).
+
+############################################################################################ 
+# Example 2
+
+Again calculate the single matrix element '(1,0,0) (1,0,0) (1,0,0) (1,0,0)', but this time
+use a much finer grid of 2000 points (rather than the default 500):
+
+python3 hydrogenic_matrix_elements.py -todo '(1,0,0) (1,0,0) (1,0,0) (1,0,0)' -N 2000
+
+Result: 0.6250005431440854
+
+As we can see, the result is correct to a higher precision (should be exactly 0.625).
+
+############################################################################################ 
+# Example 3
+
+Calculate the matrix elements '(1,0,0) (1,0,0) (1,0,0) (1,0,0)' and '(2,1,0) (2,1,0) (3,1,0) (3,1,0)':
+
+python3 hydrogenic_matrix_elements.py -todo '(1,0,0) (1,0,0) (1,0,0) (1,0,0)' '(2,1,0) (2,1,0) (3,1,0) (3,1,0)'
+
+Result for '(1,0,0) (1,0,0) (1,0,0) (1,0,0)': 0.6250166639146346
+Result for '(2,1,0) (2,1,0) (3,1,0) (3,1,0)': 0.09807323449784637
+
+Any number of matrix elements can be passed with the -todo flag like: 'element_1' 'element_2' 'element_3', but this
+becomes inefficient if one wishes to calculate a very large number of matrix elements (see next example).
+
+############################################################################################
+# Example 4
+
+Calculate all matrix elements up to n=3, parallelise this calculation over 4 processes and write
+the matrix elements to a file called 'outfile.csv':
+
+python3 hydrogenic_matrix_elements.py -n_cutoff 3 -num_cores 4 -write_to_file outfile
+
+Although there are 38416 matrix elements to calculate, most of them are zero. This calculation
+may still take awhile.

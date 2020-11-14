@@ -9,6 +9,6 @@ The program is designed to be as simple as possible to use. For example, to gene
 
 **python3 hydrogenic_matrix_elements.py -n_cutoff 2 -write_to_file outfile**
 
-More examples can be found in the 'examples.txt' file.
+More examples can be found in the examples directory.
 
 The only pre-requisite is a working installation of the [SymPy](https://www.sympy.org/en/index.html) library, which is used for the defitions of the <img src="https://latex.codecogs.com/svg.latex?\psi_{n,l,m}(\Vec{r})" title="\psi_{n,l,m}(\Vec{r})" /> and for its Wigner-3j symbol function.

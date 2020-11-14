@@ -1,7 +1,7 @@
 import random
 from sympy.physics.wigner import wigner_3j
-from jobs import create_job_list
-from make_grids import generate_lookup_tables
+from utilities.jobs import create_job_list
+from utilities.make_grids import generate_lookup_tables
 import numpy as np
 import time
 import multiprocessing as mp

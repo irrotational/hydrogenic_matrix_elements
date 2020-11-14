@@ -7,7 +7,7 @@ Where <img src="https://latex.codecogs.com/svg.latex?\psi_{n,l,m}(\Vec{r})" titl
 
 The program is designed to be as simple as possible to use. For example, to generate all possible matrix elements up to principal quantum number n=2 and write them to a file called 'outfile.csv', type:
 
-python3 hydrogenic_matrix_elements.py -n_cutoff 2 -write_to_file outfile
+**python3 hydrogenic_matrix_elements.py -n_cutoff 2 -write_to_file outfile**
 
 More examples can be found in the 'examples.txt' file.
 

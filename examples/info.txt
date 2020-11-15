@@ -1,0 +1,25 @@
+CODE INFORMATION
+
+The code uses a logarithmic mesh that is more densely spaced closed to the origin,
+where the orbitals are naturally more complicated.
+
+Trapezoidal integration strips are used for the numerical integration of the radial
+functions. The use of a logarithmic mesh means that the strips are not of equal width.
+
+The angular integrals can be calculated analytically from the use of Laplace's expansion
+of a 1/|r-r'| potential. The result is a sum over Wigner-3j functions, and the code
+uses the SymPy library to calculate these.
+
+When more than one matrix element is being calculated, the code exploits the permutation
+symmetry of the matrix elements so that the minimal possible number of integrations is carried
+out. The speed-up is especially noticable when large grids of matrix elements are being calculated.
+
+The code has sensible defaults for things such as the number of grid points (default=500) and the
+radial cutoff for each radial integral, which is automatically determined using:
+
+radial_cutoff = 10 + (2.5) * n_max**2
+
+Where n_max is the highest principal quantum number involved in that integral. This formula was
+determined by the author to work well in nearly all cases. If the radial_cutoff is too small, then
+the result of the integral will be incorrect. If it's too large, the result will be imprecise, as
+integration strips are wasted in regions where the integrand is vritually zero.
